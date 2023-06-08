@@ -19,6 +19,7 @@ describe('Restaurant Endpoints', () => {
     });
 
 
+    /* Test that the system can return all restaurants */
     describe("GET /api/restaurants", () => {
         it("should return all restaurants", async () => {
             const res = await requestWithSupertest.get('/api/restaurants');
@@ -28,6 +29,7 @@ describe('Restaurant Endpoints', () => {
         });
     });
 
+    /* Test that the system can return a single restaurant */
     describe("GET /api/restaurants/:id", () => {
         it("should return a restaurant", async () => {
             const res = await requestWithSupertest.get('/api/restaurants/6480995c932c2b798329828a');
