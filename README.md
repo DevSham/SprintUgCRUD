@@ -1,6 +1,6 @@
 # SprintUgCRUD
 
-##To run the system, follow the instructions below.
+## To run the system, follow the instructions below.
 
 ## Back-end Setup
 - Clone the repositrory use this command git clone git@github.com:DevSham/SprintUgCRUD.git
