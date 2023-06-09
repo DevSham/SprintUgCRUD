@@ -202,7 +202,7 @@ class Restaurant extends Component {
                             </div>
 
                             <div className="form-group">
-                                <label htmlFor="image_path">Image</label>
+                                <label htmlFor="image_path">Image Path</label>
                                 <input
                                     type="text"
                                     className="form-control"
