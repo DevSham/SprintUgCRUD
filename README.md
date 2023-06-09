@@ -18,3 +18,8 @@
 - Click Add Restaurant on the nav bar to create a new restauant.
 - Click on a restauant in the list to view its details.
 - A restaurant can be edited, deleted etc.
+
+##Running Tests
+- Run npm test to test system features.
+- For a single test to pass, replace 6480995c932c2b798329828a with one of the restaurant records _id.
+- Replace Nkoko restaurant with the corresponding chosen _id name for the test to pass.
