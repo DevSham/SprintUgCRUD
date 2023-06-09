@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import TutorialDataService from "../services/service";
+import RestaurantsDataService from "../services/service";
 
 export default class AddRestaurant extends Component {
 
@@ -13,8 +13,8 @@ export default class AddRestaurant extends Component {
         this.onChangeImage = this.onChangeImage.bind(this);
         this.onChangeSubmitted = this.onChangeImage.bind(this);
 
-        this.saveTutorial = this.saveTutorial.bind(this);
-        this.newTutorial = this.newTutorial.bind(this);
+        this.saveRestaurant = this.saveRestaurant.bind(this);
+        this.newRestauant = this.newRestauant.bind(this);
 
         this.state = {
             name: "",
@@ -61,14 +61,14 @@ export default class AddRestaurant extends Component {
 
     onChangeImage(e) {
         this.setState({
-            image: e.target.value
+            image_path: e.target.value
         });
     }
 
 
 
 
-    saveTutorial() {
+    saveRestaurant() {
         var data = {
             name: this.state.name,
             location: this.state.location,
@@ -77,7 +77,7 @@ export default class AddRestaurant extends Component {
             description: this.state.description
         };
 
-        TutorialDataService.create(data)
+        RestaurantsDataService.create(data)
             .then(response => {
                 this.setState({
                     id: response.data.id,
@@ -96,7 +96,7 @@ export default class AddRestaurant extends Component {
             });
     }
 
-    newTutorial() {
+    newRestauant() {
         this.setState({
             name: "",
             location: "",
@@ -115,7 +115,7 @@ export default class AddRestaurant extends Component {
                 {this.state.submitted ? (
                     <div>
                         <h4>Restaurant Created Sucessfully!</h4>
-                        <button className="btn btn-success" onClick={this.newTutorial}>
+                        <button className="btn btn-success" onClick={this.newRestauant}>
                             Create New Restaurant
                         </button>
                     </div>
@@ -135,54 +135,54 @@ export default class AddRestaurant extends Component {
                         </div>
 
                         <div className="form-group">
-                            <label htmlFor="description">Location</label>
+                            <label htmlFor="location">Location</label>
                             <input
                                 type="text"
                                 className="form-control"
-                                id="description"
+                                id="location"
                                 required
                                 value={this.state.location}
                                 onChange={this.onChangeLocation}
-                                name="description"
+                                name="location"
                             />
                         </div>
 
                         <div className="form-group">
-                            <label htmlFor="description">Contact</label>
+                            <label htmlFor="contact">Contact</label>
                             <input
                                 type="tel"
                                 className="form-control"
-                                id="description"
+                                id="contact"
                                 required
                                 value={this.state.contact}
                                 onChange={this.onChangeContact}
-                                name="description"
+                                name="contact"
                             />
                         </div>
 
                         <div className="form-group">
-                            <label htmlFor="description">Cuisine Type</label>
+                            <label htmlFor="ct">Cuisine Type</label>
                             <input
                                 type="text"
                                 className="form-control"
-                                id="description"
+                                id="ct"
                                 required
                                 value={this.state.cuisine_type}
                                 onChange={this.onChangeCuisineType}
-                                name="description"
+                                name="cuisine_type"
                             />
                         </div>
 
                         <div className="form-group">
-                            <label htmlFor="description">Image</label>
+                            <label htmlFor="image_path">Image</label>
                             <input
                                 type="text"
                                 className="form-control"
-                                id="description"
+                                id="image_path"
                                 required
-                                value={this.state.image}
+                                value={this.state.image_path}
                                 onChange={this.onChangeImage}
-                                name="description"
+                                name="image_path"
                             />
                         </div>
 
@@ -204,7 +204,7 @@ export default class AddRestaurant extends Component {
 
 
 
-                        <button onClick={this.saveTutorial} className="btn btn-success">
+                        <button onClick={this.saveRestaurant} className="btn btn-success">
                             Submit
                         </button>
                     </div>
