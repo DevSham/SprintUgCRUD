@@ -34,7 +34,7 @@ describe('Restaurant Endpoints', () => {
         it("should return a restaurant", async () => {
             const res = await requestWithSupertest.get('/api/restaurants/6480995c932c2b798329828a');
             expect(res.statusCode).toEqual(200);
-            expect(res.body.name).toBe("Rohi restaurant");
+            expect(res.body.name).toBe("Nkoko restaurant");
         });
     });
 
