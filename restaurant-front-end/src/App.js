@@ -3,9 +3,9 @@ import { Routes, Route, Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 
-import AddRestaurant from "./components/add-tutorial.component";
-import Restaurant from "./components/tutorial.component";
-import RestaurantList from "./components/tutorials-list.component";
+import AddRestaurant from "./components/add-restaurant.component";
+import Restaurant from "./components/restauant.component";
+import RestaurantList from "./components/restaurants-list.component";
 
 class App extends Component {
   render() {
