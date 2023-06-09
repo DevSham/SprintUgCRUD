@@ -13,6 +13,7 @@ class Restaurant extends Component {
         this.getRestaurant = this.getRestaurant.bind(this);
         this.updateRestaurant = this.updateRestaurant.bind(this);
         this.deleteRestaurant = this.deleteRestaurant.bind(this);
+        this.onChangeDescription = this.onChangeDescription.bind(this);
 
         this.state = {
             currentRestaurant: {
@@ -78,16 +79,26 @@ class Restaurant extends Component {
             }
         }));
     }
-    onChangeContact(e) {
-        const contact = e.target.value;
+    onChangeDescription(e) {
+        const description = e.target.value;
 
         this.setState(prevState => ({
             currentRestaurant: {
                 ...prevState.currentRestaurant,
-                contact: contact
+                description: description
             }
         }));
     }
+    onChangeContact(e) {
+            const contact = e.target.value;
+
+            this.setState(prevState => ({
+                currentRestaurant: {
+                    ...prevState.currentRestaurant,
+                    contact: contact
+                }
+            }));
+        }
 
     getRestaurant(id) {
         RestaurantsDataService.get(id)
@@ -165,15 +176,15 @@ class Restaurant extends Component {
                             </div>
 
                             <div className="form-group">
-                                <label htmlFor="description">Contact</label>
+                                <label htmlFor="contact">Contact</label>
                                 <input
                                     type="tel"
                                     className="form-control"
-                                    id="description"
+                                    id="contact"
                                     required
                                     value={currentRestaurant.contact}
                                     onChange={this.onChangeContact}
-                                    name="description"
+                                    name="contact"
                                 />
                             </div>
 
@@ -198,7 +209,7 @@ class Restaurant extends Component {
                                     id="image_path"
                                     required
                                     value={currentRestaurant.image_path}
-                                    onChange={this.onChangeDescription}
+                                    onChange={this.onChangeImage_path}
                                     name="image_path"
                                 />
                             </div>
@@ -211,7 +222,6 @@ class Restaurant extends Component {
                                     cols={3}
                                     className="form-control"
                                     id="description"
-                                    required
                                     value={currentRestaurant.description}
                                     onChange={this.onChangeDescription}
                                     name="description"
